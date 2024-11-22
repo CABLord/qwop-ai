@@ -1,8 +1,6 @@
 
 import random
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -23,8 +21,7 @@ POSSIBLE_KEYS = ['Q', 'W', 'O', 'P', 'SL']  # SL for Sleep/No action
 
 class QwopAI:
     def __init__(self):
-        service = Service(ChromeDriverManager().install())
-        self.driver = webdriver.Chrome(service=service)
+        self.driver = webdriver.Chrome()  # You'll need to have ChromeDriver installed
         self.driver.get("http://www.foddy.net/Athletics.html")  # QWOP game URL
         
     def generate_chromosome(self):
