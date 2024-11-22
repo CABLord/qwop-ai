@@ -31,27 +31,20 @@ class QwopAI:
         return [self.generate_chromosome() for _ in range(POPULATION_SIZE)]
     
     def fitness(self, chromosome):
-        distance, time_taken = self.play_game(chromosome)
-        if time_taken == 0:
-            return 0
-        return distance / time_taken
-
+        # TODO: Implement fitness calculation
+        pass
+    
     def select_parents(self, population):
-        # Tournament selection
-        tournament_size = 3
-        tournament = random.sample(population, tournament_size)
-        return max(tournament, key=self.fitness)
-
+        # TODO: Implement parent selection
+        pass
+    
     def crossover(self, parent1, parent2):
-        crossover_point = random.randint(1, CHROMOSOME_LENGTH - 1)
-        child = parent1[:crossover_point] + parent2[crossover_point:]
-        return child
-
+        # TODO: Implement crossover
+        pass
+    
     def mutate(self, chromosome):
-        for i in range(len(chromosome)):
-            if random.random() < MUTATION_RATE:
-                chromosome[i] = (random.choice(POSSIBLE_KEYS), random.uniform(0.1, 3.0))
-        return chromosome
+        # TODO: Implement mutation
+        pass
     
     def play_game(self, chromosome):
         # TODO: Implement game playing logic
