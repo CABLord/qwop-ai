@@ -157,3 +157,10 @@ if __name__ == "__main__":
         print("Best solution:", best_solution)
     finally:
         ai.cleanup()
+
+if __name__ == "__main__":
+    ai = QwopAI()
+    try:
+        ai.run_evolution()
+    finally:
+        ai.cleanup()
