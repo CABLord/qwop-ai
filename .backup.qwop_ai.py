@@ -115,48 +115,15 @@ class QwopAI:
         
         return new_population
     
-    def get_best_performer(self, population):
-        return max(population, key=self.fitness)
-
     def run_evolution(self):
         population = self.generate_population()
-        best_fitness = float('-inf')
-        best_chromosome = None
-
         for generation in range(MAX_GENERATIONS):
             print(f"Generation {generation + 1}")
             population = self.run_generation(population)
-            
-            # Get the best performer of this generation
-            generation_best = self.get_best_performer(population)
-            generation_best_fitness = self.fitness(generation_best)
-            
-            print(f"Best fitness in generation {generation + 1}: {generation_best_fitness}")
-            
-            # Update overall best if necessary
-            if generation_best_fitness > best_fitness:
-                best_fitness = generation_best_fitness
-                best_chromosome = generation_best
-                print(f"New best fitness: {best_fitness}")
-            
-            # Termination condition: if we reach 100 meters
-            if self.extract_distance() >= 100:
-                print(f"Goal reached in generation {generation + 1}!")
-                break
+            # TODO: Check for termination condition
         
-        print(f"Evolution completed. Best fitness: {best_fitness}")
-        return best_chromosome
-
     def cleanup(self):
         self.driver.quit()
-
-if __name__ == "__main__":
-    ai = QwopAI()
-    try:
-        best_solution = ai.run_evolution()
-        print("Best solution:", best_solution)
-    finally:
-        ai.cleanup()
 
 if __name__ == "__main__":
     ai = QwopAI()
