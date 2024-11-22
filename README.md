@@ -18,7 +18,7 @@ This project implements an AI agent to play the QWOP game using a genetic algori
 
 2. Install the required Python packages:
    ```
-   pip install selenium opencv-python numpy pytesseract
+   pip install selenium opencv-python numpy pytesseract webdriver_manager
    ```
 
 3. Install Tesseract OCR:
