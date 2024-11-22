@@ -6,7 +6,6 @@ This project implements an AI agent to play the QWOP game using a genetic algori
 
 - Python 3.7+
 - Chrome browser
-- ChromeDriver
 
 ## Installation
 
@@ -32,10 +31,7 @@ This project implements an AI agent to play the QWOP game using a genetic algori
      ```
    - On Windows, download the installer from [GitHub](https://github.com/UB-Mannheim/tesseract/wiki)
 
-4. Download ChromeDriver:
-   - Visit the [ChromeDriver downloads page](https://sites.google.com/a/chromium.org/chromedriver/downloads)
-   - Download the version that matches your Chrome browser version
-   - Extract the executable and place it in your system PATH or in the same directory as the script
+Note: The script will automatically download and manage the appropriate ChromeDriver version using webdriver_manager.
 
 ## Usage
 
